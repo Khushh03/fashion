@@ -10,79 +10,48 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="temp.css">
     <title>Document</title>
+
+    <style>
+        a {
+  color: #000;
+  padding: 1rem 2rem;
+  /* width: 100%; */
+  position: relative;
+  text-decoration: none;
+}
+
+a::before {
+  background: hsl(45 100% 70%);
+  content: "";
+  inset: 0;
+  border-radius: 20px;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Presentational styles */
+body {
+  display: grid;
+  font-family: system-ui, sans;
+  font-size: 3.5rem;
+  font-weight: 800;
+  height: 100vh;
+  place-items: center;
+}
+
+    </style>
 </head>
 
 <body>
-    <div class="header">
-
-        <div class="sub-header">
-            <div class="logo"><a href="#" class="">Home</a></div>
-            <div id="menus">
-                <nav>
-                    <ul class="nav-list">
-                        <li>
-                            <div class="dropdown">
-                                <a href="#">Women</a>
-                                <div class="dropdown-content">
-                                    <a href="#">Dress</a>
-                                    <a href="#">Jacket</a>
-                                    <a href="#">Sweater</a>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="dropdown">
-                                <a href="#">Men</a>
-                                <div class="dropdown-content">
-                                    <a href="#">Sweater</a>
-                                    <a href="#">Jacket</a>
-                                    <a href="#">Pants</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="#">Shoes</a></li>
-                        <li><a href="#">Magazine</a></li>
-                        <li><a href="#">Search</a></li>
-                        <li><a href="#">Cart</a></li>
-                    </ul>
-                </nav>
-
-            </div>
-
-            <!-- Bar icon for navigation -->
-            <div class="click">
-                <a href="javascript:void(0);" class="icon" onclick="fashion()">
-                    <i onclick="myFunction(this)" class="fa fa-plus-circle">
-                    </i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
-    <script>
-
-
-        // Function to toggle the bar
-        function fashion() {
-            let x = document.getElementById("menus");
-
-            if (x.style.display === "block") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "block";
-            }
-        }
-
-        // Function to toggle the plus menu into minus
-        function myFunction(x) {
-            x.classList.toggle("fa-minus-circle");
-        }
-    </script>
-
-
-
+    <a href="#">Sick Hover</a>
 </body>
 
 </html>
